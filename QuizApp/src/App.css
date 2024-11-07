@@ -1,3 +1,7 @@
 .btn{
     color: white !important;
 }
+.link{
+    text-decoration: none;
+    color: black;
+}
