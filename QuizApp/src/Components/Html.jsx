@@ -37,7 +37,7 @@ function Html() {
   }
   return (
     <div>
-        <Container className="d-flex justify-content-center align-items-center mt-4" style={{minHeight: '80vh' }}>
+        <Container className="d-flex justify-content-center align-items-center m-4" style={{minHeight: '80vh',width:'100%'}}>
         <Row>
           <Col>
             <Card className="text-center" style={{ width: '100%' }}>
@@ -52,11 +52,11 @@ function Html() {
                        Question {index+1} - {data.question}
                       </Card.Title>
                       <hr/>
-                      <div className='d-flex justify-content-between mt-1 fs-6'>
+                      <div className='d-flex justify-content-between mt-1 fs-6 gap-2'>
                       <div> <span>Currect Answer </span><button className='btn bg-success'>  {data.correctAnswer}</button></div>
                       <div>
                         <span>Your Answer </span>
-                        <button className={`btn ${data.correctAnswer === data.ans ? "bg-success" : "bg-danger"}`}>
+                        <button className={`btn  ${data.correctAnswer === data.ans ? "bg-success" : "bg-danger"}`}>
                           {data.ans}
                         </button>
                       </div>
@@ -74,7 +74,7 @@ function Html() {
                 <Card.Body>
                   <Card.Title>Quiz Question <span className='fs-3'>{currentQuestion + 1}</span> / {questions.length}</Card.Title>
                   <Card.Text>{questions[currentQuestion].question}</Card.Text>
-                  <div className='d-flex gap-2 justify-content-around'>
+                  <div className='option'>
                     {questions[currentQuestion].options.map((ans, index) => (
                       <button className='btn btn-info' key={index} onClick={() => nextQuestion(ans)}>{ans}</button>
                     ))}
